@@ -6,6 +6,7 @@ export default class MjButton extends BodyComponent {
   static endingTag = true
 
   static allowedAttributes = {
+    'custom-link-attrs': 'string',
     align: 'enum(left,center,right)',
     'background-color': 'color',
     'border-bottom': 'string',
@@ -143,7 +144,7 @@ export default class MjButton extends BodyComponent {
               valign: this.getAttribute('vertical-align'),
             })}
           >
-            <${tag}
+            <${tag} ${this.getAttribute('custom-link-attrs')}
               ${this.htmlAttributes({
                 href: this.getAttribute('href'),
                 rel: this.getAttribute('rel'),
